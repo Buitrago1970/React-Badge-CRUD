@@ -5,12 +5,23 @@
 
 // container.appendChild(element);
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-const element = <h1>Hello, Platzi Badges!</h1>;
+// const element = <h1>Hello, platzi Badges from react!</h1>;
+// const name = "martinez";
+// const jsx = <h1>hola soy,{null}</h1>;
 
-const container = document.getElementById('app');
+// vamos a usar SOLO jsx
 
-// ReactDOM.render(__qué__, __dónde__);
-ReactDOM.render(element, container);
+const jsx = (
+  <div>
+    <h1>Hola soy, un crack</h1>
+    <p>que no vende crack</p>
+  </div>
+);
+
+const container = document.getElementById("app");
+
+// ReactDOM.render(__qué__,__dónde__)
+ReactDOM.render(jsx, container);
