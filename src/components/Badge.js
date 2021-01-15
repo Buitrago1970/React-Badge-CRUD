@@ -23,7 +23,7 @@ class badge extends React.Component {
           <div>@{twitter}</div>
         </div>
         <div className="Badge__footer">
-          <a>#Sandiego</a>
+          <a>#McDonals</a>
         </div>
       </div>
     );
