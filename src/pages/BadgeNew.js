@@ -1,12 +1,11 @@
 import React from "react";
 
 import "./styles/Badge__New.css";
-import Navbar from "../components/navbar";
 import Badge from "../components/Badge";
 import Hero from "../images/Badge-header.png";
 import BadgeForm from "../components/BadgeForm";
 
-class badgeNew extends React.Component {
+class badgesNew extends React.Component {
   state = {
     form: {
       firstName: "",
@@ -27,14 +26,13 @@ class badgeNew extends React.Component {
   };
   render() {
     return (
-      <div>
-        <Navbar />
+      <>
         <div className="BadgeNew__hero">
           <img className="img-fluid" src={Hero} alt="Hero" />
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-6">
+            <div className="col-5">
               <Badge
                 firstName={this.state.form.firstName}
                 lastName={this.state.form.lastName}
@@ -51,8 +49,8 @@ class badgeNew extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
-export default badgeNew;
+export default badgesNew;
