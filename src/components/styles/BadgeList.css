@@ -1,0 +1,20 @@
+.Badge_prueba {
+  align-items: center;
+  color: #070707;
+  margin-left: 15px;
+  font-size: 14px;
+}
+.BadgeList__section-name {
+  display: flex;
+  align-items: center;
+}
+.list-group-item {
+  display: flex;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: rgb(43 39 39 / 20%) 2px 2px 2px 1px;
+}
+.twitter_blue_font {
+  color: #38a1f3;
+  margin-bottom: 2px;
+}

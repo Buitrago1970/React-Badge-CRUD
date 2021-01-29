@@ -1,0 +1,22 @@
+.Not-found {
+  background: rgb(35, 35, 35);
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100vh;
+  color: #fff;
+}
+.Not-found__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.titulo {
+  font-weight: 800;
+  letter-spacing: 15px;
+}
+.img_error {
+  height: 348px;
+}
+.btn.btn-primary {
+}
