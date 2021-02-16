@@ -7,11 +7,15 @@ import { Link } from "react-router-dom";
 import api from "../api";
 
 class Badges extends React.Component {
-  state = {
-    data: undefined,
-    error: null,
-    loanding: true,
-  };
+  constructor(props) {
+    super(props);
+    console.log("1. constructor");
+    this.state = {
+      data: undefined,
+      error: null,
+      loanding: true,
+    };
+  }
   componentDidMount() {
     console.log("3. componentDidMount");
     this.fetchData();
@@ -38,7 +42,7 @@ class Badges extends React.Component {
       return "loanding...";
     }
     if (this.state.error) {
-      return `${this.state.error} `;
+      return `error ${this.state.error} `;
     }
     console.log("2/4. render");
     return (
