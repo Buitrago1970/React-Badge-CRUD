@@ -4,9 +4,9 @@ import { AiOutlineTwitter } from "react-icons/ai";
 
 class BadgeList extends React.Component {
   render() {
-    // if (this.props.badges.length === 0) {
-    //   document.write("si funciona");
-    // }
+    if (this.props.badges.length === 0) {
+      document.write("si funciona");
+    }
     return (
       <ul className="list-unstyled">
         {this.props.listValues.map((persona) => {
