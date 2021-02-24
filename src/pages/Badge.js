@@ -1,9 +1,13 @@
 import React from "react";
 
 import BadgeList from "../components/BadgeList";
-import "./styles/Badge.css";
 import Logo from "../images/carls-jr-seeklogo.com.svg";
+import PageLoanding from "../components/PageLoanding";
+
+import "./styles/Badge.css";
+
 import { Link } from "react-router-dom";
+
 import api from "../api";
 
 class Badges extends React.Component {
@@ -39,7 +43,7 @@ class Badges extends React.Component {
   }
   render() {
     if (this.state.loanding) {
-      return "loanding...";
+      return <PageLoanding />;
     }
     if (this.state.error) {
       return `error ${this.state.error} `;

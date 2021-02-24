@@ -1,10 +1,12 @@
 import React from "react";
 import "./styles/Badge.css";
 import ConfLogo from "../images/badge.png";
+import Gravatar from "./Gravatar";
+import { Link } from "react-router-dom";
 
 class badge extends React.Component {
   render() {
-    const { firstName, lastName, avatarURL, jobTitle, twitter } = this.props;
+    const { firstName, lastName, jobTitle, twitter } = this.props;
     return (
       <div className="Badge">
         <div className="Badge__header">
@@ -15,7 +17,11 @@ class badge extends React.Component {
           ></img>
         </div>
         <div className="Badge__section-name">
-          <img className="Badge__avatar  " src={avatarURL} alt="Avatar"></img>
+          <Gravatar
+            className="Badge__avatar"
+            email={this.props.email}
+            alt="Avatar"
+          />
           <h1>
             {firstName}
             <br /> {lastName}
@@ -26,7 +32,7 @@ class badge extends React.Component {
           <div>@{twitter}</div>
         </div>
         <div className="Badge__footer">
-          <a>#McDonals</a>
+          <Link to={"badges/new"}>#McDonals</Link>
         </div>
       </div>
     );
