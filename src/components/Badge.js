@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 class badge extends React.Component {
   render() {
-    const { firstName, lastName, jobTitle, twitter } = this.props;
+    const { firstName, lastName,email, jobTitle, twitter } = this.props;
     return (
       <div className="Badge">
         <div className="Badge__header">
@@ -19,7 +19,7 @@ class badge extends React.Component {
         <div className="Badge__section-name">
           <Gravatar
             className="Badge__avatar"
-            email={this.props.email}
+            email={email}
             alt="Avatar"
           />
           <h1>

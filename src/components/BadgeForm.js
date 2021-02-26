@@ -1,10 +1,10 @@
 import React from "react";
 
 class BadgeForm extends React.Component {
-  handleClick = () => {
-    console.log("button was clicked");
-    console.log(this.state);
-  };
+  // handleClick = () => {
+  //   console.log("button was clicked");
+  //   console.log(this.state);
+  // };
   // handleSubmit = (e) => {
   //   e.preventDefault();
   //   console.log("Form was submit ");
@@ -13,8 +13,7 @@ class BadgeForm extends React.Component {
   render() {
     return (
       <>
-        <h1>nuevo asistente</h1>
-        <form onSubmit={this.props.onSubmit}>
+        <form onSubmit={this.props.onSubmit} >
           <div className="form-group">
             <label>First Name</label>
             <input
@@ -25,6 +24,7 @@ class BadgeForm extends React.Component {
               name="firstName"
               //input de estado NO controlado a controlado (no gurdar 2 veces la info)
               value={this.props.formValues.firstName}
+              required
             />
           </div>
           <div className="form-group">
@@ -36,6 +36,7 @@ class BadgeForm extends React.Component {
               type="text"
               name="lastName"
               value={this.props.formValues.lastName}
+              required
             />
           </div>
           <div className="form-group">
@@ -47,6 +48,7 @@ class BadgeForm extends React.Component {
               type="email"
               name="email"
               value={this.props.formValues.email}
+              required
             />
           </div>
           <div className="form-group">
@@ -58,6 +60,7 @@ class BadgeForm extends React.Component {
               type="text"
               name="jobTitle"
               value={this.props.formValues.jobTitle}
+              required
             />
           </div>
           <div className="form-group">
@@ -69,8 +72,10 @@ class BadgeForm extends React.Component {
               type="text"
               name="twitter"
               value={this.props.formValues.twitter}
+              required
             />
           </div>
+          {this.props.error && (<p className="text-danger">{this.props.error.message}</p>)}
           <button onClick={this.handleClick} className="btn btn-primary">
             save
           </button>

@@ -9,6 +9,8 @@ import api from "../api";
 
 class badgesNew extends React.Component {
   state = {
+    error: null,
+    loanding: false,
     form: {
       firstName: "",
       lastName: "",
@@ -17,12 +19,7 @@ class badgesNew extends React.Component {
       twitter: "",
       avatarURL: "",
     },
-    state: {
-      data: undefined,
-      error: null,
-      loanding: true,
-      // page: false,
-    },
+
   };
   handleChange = (e) => {
     this.setState({
@@ -36,17 +33,17 @@ class badgesNew extends React.Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     this.setState({ loanding: true, error: null });
-
     try {
       await api.badges.create(this.state.form);
-      this.setState({ loanding: false, page: false });
+      this.setState({ loanding: false});
+      this.props.history.push('/Badges')
     } catch (error) {
-      this.setState({ loanding: true, error: error });
+      this.setState({ loanding: false, error: error });
     }
   };
   render() {
     if (this.state.loanding) {
-      return <PageLoanding x={this.state.state.page} />;
+      return <PageLoanding />;
     }
     return (
       <>
@@ -62,7 +59,6 @@ class badgesNew extends React.Component {
                 email={this.state.form.email || ""}
                 twitter={this.state.form.twitter || "Twitter"}
                 jobTitle={this.state.form.jobTitle || "Job Title"}
-                avatarUrl="https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon"
               />
             </div>
             <div className="col-6">
@@ -70,6 +66,7 @@ class badgesNew extends React.Component {
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}
                 formValues={this.state.form}
+                error={this.state.error}
               />
             </div>
           </div>
