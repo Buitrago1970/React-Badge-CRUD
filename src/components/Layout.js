@@ -2,7 +2,7 @@ import React from "react";
 
 import Navbar from "./navbar";
 
-//para que el Lyout funcione es necesario recibir y retornar los props
+//para que el Layout funcione es necesario recibir y retornar los props
 function Layout(props) {
   return (
     <>

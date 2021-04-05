@@ -1,5 +1,8 @@
 import React from "react";
 
+import DeleteBadgeModal from "../components/DeleteBadgeModal";
+import { BsTrash } from "react-icons/bs";
+
 class BadgeForm extends React.Component {
   // handleClick = () => {
   //   console.log("button was clicked");
@@ -13,7 +16,7 @@ class BadgeForm extends React.Component {
   render() {
     return (
       <>
-        <form onSubmit={this.props.onSubmit} >
+        <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label>First Name</label>
             <input
@@ -75,7 +78,22 @@ class BadgeForm extends React.Component {
               required
             />
           </div>
-          {this.props.error && (<p className="text-danger">{this.props.error.message}</p>)}
+          {this.props.error && (
+            <p className="text-danger">{this.props.error.message}</p>
+          )}
+          {this.props.borrar && (
+            <p
+              onClick={this.props.onOpenModal}
+              className="text-danger text-right btn-delete"
+            >
+              <BsTrash /> Borrar Badge{" "}
+            </p>
+          )}
+          <DeleteBadgeModal
+            onClose={this.props.onCloseModal}
+            isOpen={this.props.modalIsOpen}
+            deleteBadge={this.props.deleteBadge}
+          />
           <button onClick={this.handleClick} className="btn btn-primary">
             save
           </button>

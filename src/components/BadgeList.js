@@ -1,9 +1,7 @@
 import React from "react";
 import "./styles/BadgeList.css";
+import { Link } from "react-router-dom";
 
-import{Link} from "react-router-dom"
-
-import{RiPencilFill} from "react-icons/ri"
 import { AiOutlineTwitter } from "react-icons/ai";
 import Gravatar from "./Gravatar";
 
@@ -25,13 +23,9 @@ class BadgeList extends React.Component {
           return (
             <li key={persona.id} className="list-group-item">
               <div className="BadgeList__section-name">
-               <Gravatar 
-              email={persona.email}
-              alt="Avatar"
-               />
+                <Gravatar email={persona.email} alt="Avatar" />
               </div>
               <div className="Badge_prueba">
-               
                 <h5>
                   {persona.firstName} {persona.lastName}
                 </h5>{" "}
@@ -42,9 +36,7 @@ class BadgeList extends React.Component {
                 <p> {persona.jobTitle}</p>
               </div>
               <div className="container-icon-edit">
-                <Link to={`/badges/${persona.id}/edit`}>
-                <RiPencilFill/>
-                </Link>
+                <Link to={`badges/${persona.id}/edit`}> ...</Link>
               </div>
             </li>
           );
