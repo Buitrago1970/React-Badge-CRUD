@@ -42,13 +42,14 @@ class Badges extends React.Component {
     clearTimeout(this.timeoutId);
   }
   render() {
+    console.log("2/4. render");
+
     if (this.state.loanding) {
       return <PageLoanding />;
     }
     if (this.state.error) {
       return `error ${this.state.error} `;
     }
-    console.log("2/4. render");
     return (
       <>
         <div className="Badges">

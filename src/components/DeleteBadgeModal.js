@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Modal from "./Modal.js";
 
+//custom hook, cuenta no puede ser mayor a 40
+function useCountState(max) {
+  //hook
+  const [cuenta, setCuenta] = useState(0);
+  if (cuenta > max) {
+    setCuenta(0);
+  }
+  return [cuenta, setCuenta];
+}
+
 function DeleteBadgeModal(props) {
+  //custom hook, cuenta no puede ser mayor a 40
+  const [cuenta, setCuenta] = useCountState(40);
+
   return (
     <Modal isOpen={props.isOpen} onClose={props.onClose}>
       <div className="delete-badge-modal">
@@ -14,6 +27,13 @@ function DeleteBadgeModal(props) {
           </button>
           <button onClick={props.onClose} className="btn btn-primary ">
             Cancel
+          </button>
+          <p>la cuenta es {cuenta}</p>
+          <button
+            onClick={() => setCuenta(cuenta + 1)}
+            className="btn btn-primary"
+          >
+            {" "}
           </button>
         </div>
       </div>
